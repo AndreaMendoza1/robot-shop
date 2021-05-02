@@ -3,7 +3,10 @@
 image:
   repo: robotshop
   version: latest
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
+  
+nameOverride: "robot-shop-app"
+fullnameOverride: "robot-shop-chart"
 
 # Alternative payment gateway URL
 # Default is https://www.paypal.com
@@ -33,3 +36,8 @@ redis:
   storageClassName: standard
 
 ocCreateRoute: false
+
+serviceAccount:
+ create: true
+ annotations: {}
+ name: "robot-shopap"
